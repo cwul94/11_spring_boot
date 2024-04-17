@@ -29,11 +29,10 @@ public class FirstController {
         1. WebRequest로 요청 파라미터 전달 받기
         파라미터 선언부에 WebRequest 타입을 선언하면 해당 메소드 호출 시 인자로 값을 전달해 준다.
         핸들러 메소드 매개변수로 HttpServletRequest, HttpServletResponse도 사용 가능하다.
-        상위 타입인 ServletRequest, ServletResponse도 사용 가능하다.
-        WebReqeust는 HttpServletRequest의 요청 정보를 거의 대부분 그대로 가지고 있는 API로 Servlet에 종속적이지 않다.
+        그보다 더 상위 타입인 ServletRequest, ServletResponse도 사용 가능하다.
+        WebReqeust는 HttpServletRequest의 요청 정보를 거의 대부분 그대로 가지고 있지만 Servlet과 다른 API로 종속적이지 않다.
         HttpServletRequest는 Servlet API의 일부이고,
         WebRequest는 Spring의 일부이기 때문에 Spring 기반의 프로젝트에서 더 자주 사용 된다.
-
      */
 
     @PostMapping("regist")
@@ -70,8 +69,8 @@ public class FirstController {
 
     @PostMapping("modify")
     public String modifyMenuName(Model model
-                                , /*@RequestParam*/ String modifyName
-                                , /*@RequestParam*/ String modifyPrice){
+                                , @RequestParam(required = false) String modifyName
+                                , @RequestParam(defaultValue = "0") String modifyPrice){
 
         String message = "'" + modifyName + "' 메뉴의 가격이 " + modifyPrice + "원으로 변경 되었습니다.";
 
@@ -81,12 +80,12 @@ public class FirstController {
     }
 
     /*
-        파라미터가 여러 개인 경우 앱으로 한 번에 처리할 수도 있다.
+        파라미터가 여러 개인 경우 Map Object로 한 번에 처리할 수도 있다.
         이 때, 맵의 키는 form의 name 속성값이 된다.
      */
 
     @PostMapping("modifyAll")
-    public String modifyAll(Model model, @RequestParam Map<String,String> parameters){
+    public String modifyAll(Model model, @RequestParam(required = false) Map<String,String> parameters){
         String modifyName = parameters.get("modifyName2");
         int modifyPrice = Integer.parseInt(parameters.get("modifyPrice2"));
 
@@ -114,7 +113,7 @@ public class FirstController {
      */
 
     @PostMapping("search")
-    public String searchMenu(/*@ModelAttribute("menu")*/ MenuDTO menu) {
+    public String searchMenu(@ModelAttribute("menu") MenuDTO menu) {
 
         System.out.println(menu);
 
