@@ -49,9 +49,5 @@
     <h3>GET : /detail/{orderNo}</h3>
     <button onclick="location.href='/order/detail/3'">GET 주문 상세보기 요청</button>
 
-    <th:block th:each="num : ${ #numbers.sequence(1,5) }">
-        <a th:href="@{|/order/detail/${ num }|}" th:text="메뉴번호+${ num }"></a>
-    </th:block>
-    <a th:href="@{/}">메인으로</a>
 </body>
 </html>

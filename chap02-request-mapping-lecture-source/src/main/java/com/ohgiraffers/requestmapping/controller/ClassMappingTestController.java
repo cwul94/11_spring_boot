@@ -39,7 +39,7 @@ public class ClassMappingTestController {
         pathvariable로 전달되는 {변수명} 값은 매개변수명과 동일해야한다.
         만약 동일하지 않으면 @Pathvariable("이름")을 설정해주어야 한다.
         이는 REST형 웹 서비스를 설계할 때 유용하게 사용된다.
-     */
+    */
 
     @GetMapping("/detail/{orderNum}")
     public String selectOrderDetail(Model model, @PathVariable("orderNum") int orderNo){
