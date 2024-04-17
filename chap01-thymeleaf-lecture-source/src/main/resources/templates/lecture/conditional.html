@@ -67,7 +67,7 @@
     </table>
 
     <h3>#numbers Utility Object를 이용하여 반복문 작성하기</h3>
-    <th:block th:each="num : ${ numbers.sequence(5,10) }">
+    <th:block th:each="num : ${ #numbers.sequence(5,10) }">
         <a th:href="@{|/numbering/${ numStat.count }|}" th:text="번호 + ${ num }"></a>
     </th:block>
 </body>

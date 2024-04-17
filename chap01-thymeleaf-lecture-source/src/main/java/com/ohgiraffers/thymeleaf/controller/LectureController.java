@@ -26,7 +26,7 @@ public class LectureController {
         return mv;
     }
 
-    @GetMapping("conditional")
+    @GetMapping("conditional")      // Handler Mapping
     public ModelAndView conditional(ModelAndView mv) {
 
         mv.addObject("num",1);
