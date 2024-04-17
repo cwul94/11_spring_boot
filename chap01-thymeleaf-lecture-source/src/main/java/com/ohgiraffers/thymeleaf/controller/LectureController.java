@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("lecture")  // 상위 경로 지정
+@RequestMapping("lecture")  // 공통된 상위 경로 지정
 public class LectureController {
 
     @GetMapping("expression") // root 매핑
