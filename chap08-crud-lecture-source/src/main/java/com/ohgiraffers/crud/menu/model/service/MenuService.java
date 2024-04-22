@@ -39,4 +39,5 @@ public class MenuService {
     public void deleteMenu(int code) {
         menuMapper.deleteMenu(code);
     }
+
 }

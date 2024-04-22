@@ -25,14 +25,14 @@
         fetch("/menu/category")
             .then(res => res.json())
             .then(data => {
-            const $categoryCode = document.getElementById("categoryCode");
+                const categoryCode = $("#categoryCode");/*document.getElementById("categoryCode");*/
 
-            for(let index in data) {
-            const $option = document.createElement('option');
-            $option.value = data[index].code;
-            $option.text = data[index].name;
+                for(let index in data) {
+                const option = $("#option");/*document.createElement('option')*/
+                option.value = data[index].code;
+                option.text = data[index].name;
 
-            $categoryCode.appendChild($option);
+                categoryCode.appendChild(option);
             }
         });
     </script>
