@@ -19,7 +19,6 @@
     <select id="findAllMenu" resultMap="menuResultMap">
         SELECT
                 MENU_CODE
-            ,   MENU_NAME
             ,   MENU_PRICE
             ,   CATEGORY_CODE
             ,   ORDERABLE_STATUS
