@@ -1,0 +1,13 @@
+GET http://localhost:8080/valid/users
+###
+GET http://localhost:8080/valid/users/4
+###
+POST http://localhost:8080/valid/users
+Content-Type: application/json
+
+{
+  "id": "idTest",
+  "pwd": "pwdTest",
+  "name": "nameTest",
+  "enrollDate": "2024-05-24"
+}
